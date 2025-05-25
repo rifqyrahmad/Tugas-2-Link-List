@@ -35,9 +35,7 @@ void tambahBuku(const string& judul, int harga) {
     cout << "\nBuku berhasil ditambahkan!\n";
 }
 
-/**
- * Menampilkan seluruh buku
- */
+// Menampilkan seluruh buku
 void tampilkanBuku() {
     if (!head) {
         cout << "\nBelum ada data buku.\n";
@@ -55,9 +53,7 @@ void tampilkanBuku() {
     }
 }
 
-/**
- * Mencari buku berdasarkan judul
- */
+// Mencari buku berdasarkan judul
 void cariBuku(const string& keyword) {
     Buku* current = head;
     while (current) {
@@ -71,9 +67,7 @@ void cariBuku(const string& keyword) {
     cout << "\nBuku tidak ditemukan.\n";
 }
 
-/**
- * Menyisipkan buku di depan
- */
+// Menyisipkan buku di depan
 void sisipDepan(const string& judul, int harga) {
     Buku* bukuBaru = new Buku{judul, harga, head, nullptr};
     if (head) head->prev = bukuBaru;
@@ -82,9 +76,7 @@ void sisipDepan(const string& judul, int harga) {
     cout << "\nBuku disisipkan di depan.\n";
 }
 
-/**
- * Menyisipkan buku di belakang (implementasi langsung)
- */
+// Menyisipkan buku di belakang (implementasi langsung)
 void sisipBelakang(const string& judul, int harga) {
     Buku* bukuBaru = new Buku{judul, harga, nullptr, tail};
     if (!head) {
@@ -96,9 +88,7 @@ void sisipBelakang(const string& judul, int harga) {
     cout << "\nBuku disisipkan di belakang.\n";
 }
 
-/**
- * Menyisipkan buku di tengah (setelah judul tertentu)
- */
+// Menyisipkan buku di tengah (setelah judul tertentu)
 void sisipTengah(const string& judulBaru, int harga, const string& setelahJudul) {
     Buku* current = head;
     while (current && current->judul != setelahJudul) {
@@ -118,9 +108,7 @@ void sisipTengah(const string& judulBaru, int harga, const string& setelahJudul)
     cout << "\nBuku disisipkan setelah \"" << setelahJudul << "\".\n";
 }
 
-/**
- * Menghapus buku berdasarkan judul
- */
+// Menghapus buku berdasarkan judul
 void hapusBuku(const string& judul) {
     Buku* current = head;
     while (current && current->judul != judul) {
